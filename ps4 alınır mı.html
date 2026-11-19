@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PS4 Dünyam Pro | Yiğit Bezek</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #0b1120;
+    color: #f8fafc;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #1d4ed8, #0891b2);
+    padding: 75px 20px;
+    text-align: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+  }
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  header p {
+    font-size: 1.15rem;
+    color: #e0f2fe;
+  }
+  nav {
+    background: #0f172a;
+    padding: 16px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    border-bottom: 1px solid #1e293b;
+  }
+  nav a {
+    color: #f1f5f9;
+    text-decoration: none;
+    margin: 0 14px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.25s;
+  }
+  nav a:hover {
+    color: #38bdf8;
+  }
+  .container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 35px 0;
+  }
+  .section-title {
+    text-align: center;
+    margin: 45px 0 25px;
+    color: #38bdf8;
+    font-size: 1.8rem;
+  }
+  .hero {
+    background: #1e293b;
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #334155;
+    margin-bottom: 30px;
+  }
+  .hero h2 {
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+  .card {
+    background: #1e293b;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #334155;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+  }
+  .badge {
+    display: inline-block;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .search-box {
+    max-width: 500px;
+    margin: 0 auto 25px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .stars {
+    color: #facc15;
+    font-size: 1.1rem;
+    margin: 8px 0;
+  }
+  .guide-list {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .guide-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #334155;
+  }
+  .guide-list li:last-child {
+    border-bottom: none;
+  }
+  .ai-box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #0284c7;
+  }
+  .ai-input-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .ai-answer {
+    background: #0f172a;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 15px;
+    border-left: 4px solid #38bdf8;
+    color: #e2e8f0;
+  }
+  .quick-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .tag-btn {
+    background: #334155;
+    color: #e2e8f0;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+  }
+  .tag-btn:hover {
+    background: #0284c7;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.98rem;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+  }
+  button {
+    background: #22c55e;
+    color: #ffffff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.98rem;
+    transition: background 0.25s;
+  }
+  button:hover {
+    background: #16a34a;
+  }
+  .comment {
+    background: #0f172a;
+    margin-top: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+  }
+  footer {
+    background: #0f172a;
+    text-align: center;
+    padding: 28px 15px;
+    margin-top: 60px;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎮 PS4 Dünyam Pro</h1>
+  <p>PS4 Hakkında Her Şey — Rehberler, Oyunlar ve Yapay Zekâ Asistanı</p>
+</header>
+
+<nav>
+  <a href="#anasayfa">Ana Sayfa</a>
+  <a href="#oyunlar">Oyunlar</a>
+  <a href="#rehberler">Rehberler</a>
+  <a href="#sorunlar">Sorunlar</a>
+  <a href="#asistan">PS4 Asistanı</a>
+  <a href="#yorumlar">Yorumlar</a>
+</nav>
+
+<div class="container">
+
+  <section class="hero" id="anasayfa">
+    <h2>🏠 PS4 Hâlâ Alınır mı?</h2>
+    <p>Bütçesi sınırlı oyuncular için PlayStation 4, dev oyun kütüphanesi ve uygun ikinci el fiyatlarıyla hâlâ güçlü bir seçenektir.</p>
+  </section>
+
+  <h2 class="section-title">🎤 Yiğit Bezek'in Yorumu</h2>
+  <div class="card">
+    <p>
+      <b>Yiğit Bezek</b> <span class="badge">Site Sahibi</span><br><br>
+      PS4 almak gerçekten kulağa hoş gelse de oyun fiyatlarına ve kasa temizliğine dikkat ederek alın. Konsolu uygun fiyata bulabilirsiniz ancak oyun ve bakım masrafını da hesaba katmanız gerekir. Ben kendi PlayStation 4 cihazımdan memnunum ve özellikle hikâye oyunlarında büyük keyif alıyorum.
+    </p>
+  </div>
+
+  <h2 class="section-title" id="oyunlar">🎮 Efsane PS4 Oyunları</h2>
+  <div class="search-box">
+    <input type="text" id="gameSearch" placeholder="Oyun Ara (Örn: God of War, RDR2, GTA...)" onkeyup="filterGames()">
+  </div>
+
+  <div class="cards" id="gameList">
+    <div class="card game-item">
+      <h3>Red Dead Redemption 2</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>Vahşi Batı atmosferi, derin hikâyesi ve canlı açık dünyasıyla PS4'ün zirve yapımlarından biri.</p>
+    </div>
+    <div class="card game-item">
+      <h3>God of War</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>Kratos ve Atreus'un İskandinav mitolojisindeki unutulmaz baba-oğul yolculuğu ve aksiyonu.</p>
+    </div>
+    <div class="card game-item">
+      <h3>The Last of Us Part II</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>Yüksek gerilimi, sinematik anlatımı ve sürükleyici oynanışıyla öne çıkan başyapıt.</p>
+    </div>
+    <div class="card game-item">
+      <h3>Ghost of Tsushima</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>Feodal Japonya'da samuray düelloları ve büyüleyici manzaralar sunan açık dünya oyunu.</p>
+    </div>
+    <div class="card game-item">
+      <h3>Grand Theft Auto V</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>Los Santos sokaklarında sınırsız özgürlük ve bitmeyen görevleriyle klasikleşmiş yapım.</p>
+    </div>
+    <div class="card game-item">
+      <h3>Marvel's Spider-Man</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>New York gökdelenleri arasında akıcı ağ atma mekanikleri ve hızlı dövüş sistemi.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="rehberler">📚 Alım & Kullanım Rehberleri</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>✅ İkinci El PS4 Alırken Kontrol Listesi</h3>
+      <ul class="guide-list">
+        <li>✅ Kasa arkasındaki garanti/güvenlik etiketi sökülmemiş olmalı.</li>
+        <li>✅ PSN hesabına giriş yapıp ban kontrolü mutlaka yapılmalı.</li>
+        <li>✅ DualShock 4 kollarında analog kayması (drift) test edilmeli.</li>
+        <li>✅ Slim veya Pro kasa tercih edilmeli, fan sesi kontrol edilmeli.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🛡️ Güvenli Oyun & Hesap Kullanımı</h3>
+      <ul class="guide-list">
+        <li>✅ Oyunları yalnızca resmi PS Store veya kutulu olarak temin edin.</li>
+        <li>✅ Kırık (Jailbreak) yazılımlar çevrimiçi erişimi ve güvenliği bitirir.</li>
+        <li>✅ PS Plus Extra aboneliği ile yüzlerce oyuna uygun fiyata erişin.</li>
+        <li>✅ İki adımlı doğrulamayı (2FA) hesabınızda aktif tutun.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="sorunlar">🔧 Sık Yaşanan Sorunlar ve Çözümleri</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>💨 Aşırı Fan Sesi ve Isınma</h3>
+      <p>Cihaz uçak motoru gibi ses çıkarıyorsa iç toz temizliği ve termal macun yenileme zamanı gelmiş demektir. Cihazı kapalı dolap içinde tutmayın.</p>
+    </div>
+    <div class="card">
+      <h3>🎮 Kol Bağlantı veya Şarj Sorunu</h3>
+      <p>DualShock 4 bağlanmıyorsa kolun arkasındaki küçük deliğe iğne ile 5 saniye basıp sıfırlayın ve orijinal data kablosuyla konsola bağlayın.</p>
+    </div>
+    <div class="card">
+      <h3>🐢 Menüde Kasma ve Yavaşlama</h3>
+      <p>PS4'ü tamamen kapatıp güç tuşuna 7 saniye basılı tutarak Güvenli Mod'a girin ve "Veritabanını Yeniden Oluştur" seçeneğini çalıştırın.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="asistan">🤖 PS4 Yapay Zekâ Asistanı</h2>
+  <div class="ai-box">
+    <p>PS4 modelleri, oyun tavsiyeleri, fan sesi, kol sorunları veya ikinci el alım hakkında istediğini sor:</p>
+    <div class="quick-tags">
+      <button type="button" class="tag-btn" onclick="quickAsk('Hangi PS4 modeli alınır?')">Hangi model alınır?</button>
+      <button type="button" class="tag-btn" onclick="quickAsk('Oyun önerisi ver')">Oyun önerisi ver</button>
+      <button type="button" class="tag-btn" onclick="quickAsk('PS4 çok ısınıyor ve fan sesi var')">Fan sesi çözümü</button>
+      <button type="button" class="tag-btn" onclick="quickAsk('İkinci el PS4 alırken nelere dikkat etmeliyim?')">2. el kontrol</button>
+    </div>
+    <div class="ai-input-row">
+      <input type="text" id="aiQuestion" placeholder="PS4 hakkında soru sor..." onkeypress="if(event.key==='Enter') askAssistant()">
+      <button type="button" onclick="askAssistant()">Sor</button>
+    </div>
+    <div class="ai-answer" id="aiResponse">
+      Merhaba! Ben PS4 Dünyam Pro Asistanı. Yukarıdaki kutuya sorunu yazıp <b>Sor</b> butonuna basabilirsin.
+    </div>
+  </div>
+
+  <h2 class="section-title" id="yorumlar">💬 Oyuncu Yorumları</h2>
+  <div class="card">
+    <form id="commentForm">
+      <input type="text" id="author" placeholder="Adınız" required style="margin-bottom: 10px;">
+      <textarea id="commentText" rows="3" placeholder="Yorumunuz" required style="margin-bottom: 10px;"></textarea>
+      <button type="submit">Yorum Gönder</button>
+    </form>
+    <div id="commentList">
+      <div class="comment">
+        <b>Yiğit Bezek:</b> PS4 Dünyam Pro yayında! Görüş ve sorularınızı aşağıya bırakabilirsiniz.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 PS4 Dünyam Pro — Hazırlayan: Yiğit Bezek</p>
+</footer>
+
+<script>
+  function filterGames() {
+    const input = document.getElementById("gameSearch").value.toLowerCase();
+    const cards = document.querySelectorAll(".game-item");
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(input) ? "block" : "none";
+    });
+  }
+
+  function quickAsk(text) {
+    document.getElementById("aiQuestion").value = text;
+    askAssistant();
+  }
+
+  function askAssistant() {
+    const q = document.getElementById("aiQuestion").value.trim().toLowerCase();
+    const res = document.getElementById("aiResponse");
+    if (!q) {
+      res.innerHTML = "Lütfen önce bir soru yaz!";
+      return;
+    }
+
+    let answer = "";
+    if (q.includes("model") || q.includes("slim") || q.includes("pro") || q.includes("fat")) {
+      answer = "<b>Model Tavsiyesi:</b> Sessizlik ve sorunsuzluk için <b>PS4 Slim</b>, 4K TV'de daha yüksek çözünürlük ve akıcılık için <b>PS4 Pro</b> tercih edilmelidir. İlk çıkan parlak kasa Fat modellerden uzak durmak daha sağlıklıdır.";
+    } else if (q.includes("oyun") || q.includes("öneri") || q.includes("tavsiye")) {
+      answer = "<b>Oyun Önerisi:</b> Hikâye ve aksiyon için <i>God of War</i>, <i>The Last of Us Part II</i> ve <i>Red Dead Redemption 2</i>; samuray teması için <i>Ghost of Tsushima</i> mutlaka oynanmalıdır.";
+    } else if (q.includes("fan") || q.includes("ısın") || q.includes("ses")) {
+      answer = "<b>Isınma ve Fan Çözümü:</b> Konsolun hava kanallarını açık bırakın. Sorun devam ediyorsa kaliteli bir termal macun (örneğin Arctic MX-4) değişimi ve iç fan temizliği sesi büyük ölçüde keser.";
+    } else if (q.includes("ikinci el") || q.includes("2. el") || q.includes("alınır")) {
+      answer = "<b>İkinci El Kontrolü:</b> Arka güvenlik etiketini, PSN ban durumunu, disk okuyucuyu ve kolların analog tuşlarını mutlaka test ederek alın.";
+    } else if (q.includes("kol") || q.includes("dualshock") || q.includes("şarj")) {
+      answer = "<b>DualShock 4 Çözümü:</b> Kolun arkasındaki küçük sıfırlama deliğine iğne ile 5 saniye basılı tutun, ardından USB kablosuyla PS4'e bağlayıp PS tuşuna basın.";
+    } else {
+      answer = "<b>PS4 Asistanı:</b> Bu konuda en iyi adım cihaz yazılımını güncel tutmak, güvenilir hesaplardan oyun oynamak ve düzenli bakım yapmaktır. Model, oyun veya arıza kelimeleriyle daha detaylı sorabilirsin!";
+    }
+
+    res.innerHTML = answer;
+  }
+
+  const commentForm = document.getElementById("commentForm");
+  const commentList = document.getElementById("commentList");
+
+  commentForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const author = document.getElementById("author").value.trim();
+    const text = document.getElementById("commentText").value.trim();
+    if (!author || !text) return;
+
+    const div = document.createElement("div");
+    div.className = "comment";
+    div.innerHTML = "<b>" + author.replace(/</g, "&lt;") + ":</b> " + text.replace(/</g, "&lt;");
+    commentList.prepend(div);
+    commentForm.reset();
+  });
+</script>
+
+</body>
+</html>
